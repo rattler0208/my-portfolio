@@ -1,0 +1,413 @@
+/* =========================================
+   ABOUT PAGE - DARK PURPLE PORTFOLIO THEME
+   ========================================= */
+
+/* Reset default browser spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Main page styling */
+body {
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #f4f0ff;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(126, 34, 206, 0.15),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 10% 80%,
+            rgba(88, 28, 135, 0.12),
+            transparent 35%
+        ),
+        #08060f;
+
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   NAVIGATION BAR
+   ========================================= */
+
+/* =========================================
+   NAVIGATION - MATCHES HOME PAGE
+   ========================================= */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+
+    width: 100%;
+    padding: 0 5px;
+
+    background: transparent;
+    border: none;
+    box-shadow: none;
+
+    position: relative;
+    top: auto;
+    z-index: auto;
+
+    backdrop-filter: none;
+}
+
+/* Navigation links */
+.navbar a {
+    color: #d6cce9;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+
+    transition: color 0.3s ease;
+}
+
+/* Hover effect */
+.navbar a:hover {
+    color: #c084fc;
+}
+
+/* Active page */
+.navbar a.active {
+    color: #c084fc;
+}
+
+/* Mobile navigation */
+@media (max-width: 480px) {
+    .navbar {
+        justify-content: flex-start;
+        gap: 25px;
+        padding: 0 5px;
+    }
+
+    .navbar a {
+        font-size: 14px;
+    }
+}
+
+/* =========================================
+   ABOUT PAGE HEADER
+   ========================================= */
+
+header {
+    max-width: 1100px;
+    margin: 0 auto;
+
+    padding: 100px 30px 50px;
+
+    text-align: center;
+
+    animation: fadeInUp 0.8s ease both;
+}
+
+/* Small heading above the main title */
+header::before {
+    content: "GET TO KNOW ME";
+
+    display: block;
+    margin-bottom: 20px;
+
+    color: #c084fc;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 5px;
+}
+
+/* Main About heading */
+header h1 {
+    max-width: 950px;
+    margin: 0 auto;
+
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: -1.5px;
+
+    background: linear-gradient(
+        100deg,
+        #ffffff 20%,
+        #d8b4fe 55%,
+        #a855f7 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* =========================================
+   MAIN CONTENT CARD
+   ========================================= */
+
+main {
+    max-width: 1050px;
+    margin: 0 auto 100px;
+
+    padding: 45px;
+
+    background: rgba(255, 255, 255, 0.025);
+
+    border: 1px solid rgba(168, 85, 247, 0.22);
+    border-radius: 24px;
+
+    box-shadow:
+        0 20px 70px rgba(0, 0, 0, 0.25),
+        0 0 40px rgba(126, 34, 206, 0.05);
+
+    animation: fadeInUp 1s ease both;
+}
+
+/* About paragraph */
+main h2 {
+    margin-bottom: 35px;
+
+    color: #c4bdd5;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.9;
+}
+
+/* Current Tech Stack heading */
+main h3 {
+    display: inline-block;
+
+    margin-bottom: 25px;
+
+    color: #ffffff;
+    font-size: 27px;
+    font-weight: 750;
+}
+
+/* Purple line below the tech stack heading */
+main h3::after {
+    content: "";
+
+    display: block;
+    width: 65px;
+    height: 4px;
+
+    margin-top: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #a855f7,
+        #7c3aed
+    );
+
+    border-radius: 10px;
+}
+
+/* =========================================
+   TECH STACK CARDS
+   ========================================= */
+
+main ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+
+    list-style: none;
+}
+
+/* Individual tech stack card */
+main ul li {
+    position: relative;
+
+    padding: 22px 22px 22px 48px;
+
+    color: #d8cfe8;
+    font-size: 15px;
+    line-height: 1.8;
+
+    background: rgba(168, 85, 247, 0.055);
+
+    border: 1px solid rgba(168, 85, 247, 0.16);
+    border-radius: 14px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Purple bullet icon */
+main ul li::before {
+    content: "✦";
+
+    position: absolute;
+    left: 20px;
+    top: 21px;
+
+    color: #c084fc;
+    font-size: 18px;
+}
+
+/* Hover animation */
+main ul li:hover {
+    transform: translateY(-5px);
+
+    background: rgba(168, 85, 247, 0.12);
+
+    border-color: rgba(192, 132, 252, 0.5);
+
+    box-shadow: 0 10px 30px rgba(126, 34, 206, 0.1);
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    padding: 25px 20px;
+
+    text-align: center;
+    color: #827595;
+    font-size: 13px;
+
+    border-top: 1px solid rgba(168, 85, 247, 0.15);
+}
+
+/* Highlight name in footer */
+footer span {
+    color: #c084fc;
+}
+
+/* =========================================
+   ANIMATIONS
+   ========================================= */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   TABLET RESPONSIVENESS
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    nav {
+        padding: 18px 5%;
+    }
+
+    nav ul {
+        gap: 18px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    header {
+        padding: 75px 25px 40px;
+    }
+
+    header h1 {
+        letter-spacing: -0.5px;
+    }
+
+    main {
+        margin: 0 20px 60px;
+        padding: 30px;
+    }
+
+    main h2 {
+        font-size: 16px;
+    }
+
+    main ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+   ========================================= */
+
+@media (max-width: 480px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        width: 100%;
+        justify-content: center;
+        gap: 22px;
+    }
+
+    nav ul li a {
+        font-size: 13px;
+    }
+
+    header {
+        padding: 60px 20px 35px;
+    }
+
+    header::before {
+        font-size: 11px;
+        letter-spacing: 3px;
+    }
+
+    header h1 {
+        font-size: 32px;
+    }
+
+    main {
+        margin: 0 14px 45px;
+        padding: 23px 18px;
+        border-radius: 18px;
+    }
+
+    main h2 {
+        font-size: 15px;
+        line-height: 1.85;
+    }
+
+    main h3 {
+        font-size: 23px;
+    }
+
+    main ul li {
+        padding: 18px 15px 18px 40px;
+        font-size: 14px;
+    }
+
+    main ul li::before {
+        left: 14px;
+        top: 17px;
+    }
+}
+
+/* Respect reduced-motion accessibility settings */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}
