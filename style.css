@@ -1,0 +1,486 @@
+
+/* =========================================
+   1. GLOBAL SETTINGS
+   ========================================= */
+
+/* Remove default spacing and use predictable sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Smooth scrolling when navigating between page sections */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Main page styling */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #090710;
+    color: #f5f3ff;
+    min-height: 100vh;
+    line-height: 1.7;
+
+    /* Soft purple background glow */
+    background-image:
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(124, 58, 237, 0.12),
+            transparent 35%
+        );
+}
+
+
+/* =========================================
+   2. NAVIGATION BAR
+   ========================================= */
+
+.navbar {
+    width: 100%;
+    min-height: 85px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 8%;
+
+    background-color: rgba(9, 7, 16, 0.85);
+    border-bottom: 1px solid rgba(168, 85, 247, 0.15);
+}
+
+/* Portfolio logo */
+.logo {
+    color: #ffffff;
+    font-size: 27px;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+/* Purple dot after the logo */
+.logo span {
+    color: #a855f7;
+}
+
+/* Navigation links container */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+/* Individual navigation links */
+.nav-links a {
+    color: #b9b4c9;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for navigation links */
+.nav-links a:hover,
+.nav-links a.active {
+    color: #c084fc;
+}
+
+
+/* =========================================
+   3. HERO SECTION
+   ========================================= */
+
+.hero {
+    max-width: 1400px;
+    min-height: calc(100vh - 145px);
+
+    margin: 0 auto;
+    padding: 70px 8%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 70px;
+}
+
+/* Left side introduction */
+.hero-content {
+    flex: 1;
+    max-width: 650px;
+}
+
+/* Small introduction label */
+.greeting {
+    color: #c084fc;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+}
+
+/* Main heading */
+.hero-content h1 {
+    font-size: clamp(36px, 4.5vw, 64px);
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -2px;
+
+    margin-bottom: 18px;
+}
+
+/* Highlight the name in purple */
+.hero-content h1 span {
+    color: #a855f7;
+}
+
+/* Student title */
+.hero-content h2 {
+    color: #d6cdea;
+    font-size: clamp(18px, 2vw, 25px);
+    font-weight: 500;
+
+    margin-bottom: 24px;
+}
+
+/* Introduction paragraph */
+.description {
+    max-width: 550px;
+
+    color: #a7a0b8;
+    font-size: 16px;
+    line-height: 1.9;
+
+    margin-bottom: 24px;
+}
+
+/* Short tagline */
+.tagline {
+    color: #f5f3ff;
+    font-size: 16px;
+    font-weight: 600;
+
+    margin-bottom: 32px;
+}
+
+/* Highlight the second tagline */
+.tagline span {
+    color: #c084fc;
+}
+
+
+/* =========================================
+   4. BUTTONS
+   ========================================= */
+
+/* Keep buttons aligned horizontally */
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+/* Common button styling */
+.btn {
+    display: inline-block;
+
+    padding: 13px 24px;
+    border-radius: 8px;
+
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+/* Primary purple button */
+.primary-btn {
+    background: linear-gradient(
+        135deg,
+        #9333ea,
+        #6d28d9
+    );
+
+    color: #ffffff;
+    border: 1px solid transparent;
+}
+
+/* Primary button hover */
+.primary-btn:hover {
+    transform: translateY(-3px);
+
+    background: linear-gradient(
+        135deg,
+        #a855f7,
+        #7c3aed
+    );
+}
+
+/* Secondary transparent button */
+.secondary-btn {
+    color: #e9d5ff;
+    border: 1px solid #65418b;
+    background-color: rgba(168, 85, 247, 0.05);
+}
+
+/* Secondary button hover */
+.secondary-btn:hover {
+    transform: translateY(-3px);
+    border-color: #c084fc;
+    background-color: rgba(168, 85, 247, 0.12);
+}
+
+
+/* =========================================
+   5. RIGHT-SIDE PROFILE IMAGE
+   ========================================= */
+
+/* Image container */
+.hero-image {
+    flex: 0 0 340px;
+    max-width: 340px;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-right: 10px;
+}
+
+/* Purple glow behind the image */
+.image-glow {
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -55%);
+
+    background-color: #7c3aed;
+    filter: blur(100px);
+    opacity: 0.25;
+
+    z-index: 0;
+}
+
+/* Frame around the image */
+.image-frame {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 320px;
+
+    padding: 8px;
+
+    border-radius: 24px;
+    border: 1px solid rgba(192, 132, 252, 0.4);
+
+    background: linear-gradient(
+        145deg,
+        rgba(168, 85, 247, 0.18),
+        rgba(20, 15, 35, 0.7)
+    );
+
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.4);
+}
+
+/* Your actual PNG image */
+.image-frame img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    border-radius: 17px;
+    object-fit: contain;
+}
+
+/* Small label underneath the image */
+.image-label {
+    position: relative;
+    z-index: 1;
+
+    margin-top: 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px 18px;
+
+    color: #d8cde8;
+    font-size: 13px;
+
+    background-color: #151020;
+    border: 1px solid #30233f;
+    border-radius: 30px;
+}
+
+/* Small purple status dot */
+.status-dot {
+    width: 8px;
+    height: 8px;
+
+    background-color: #c084fc;
+    border-radius: 50%;
+
+    box-shadow: 0 0 12px rgba(192, 132, 252, 0.8);
+}
+
+
+/* =========================================
+   6. FOOTER
+   ========================================= */
+
+.footer {
+    padding: 20px;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(168, 85, 247, 0.12);
+
+    color: #777087;
+    font-size: 12px;
+}
+
+
+/* =========================================
+   7. TABLET RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 1000px) {
+
+    /* Reduce the gap between text and image */
+    .hero {
+        gap: 35px;
+        padding: 60px 6%;
+    }
+
+    /* Make the image slightly smaller */
+    .hero-image {
+        flex-basis: 280px;
+        max-width: 280px;
+        margin-right: 0;
+    }
+
+    .image-frame {
+        max-width: 280px;
+    }
+
+    /* Reduce navigation spacing */
+    .nav-links {
+        gap: 22px;
+    }
+}
+
+
+/* =========================================
+   8. MOBILE RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    /* Stack the logo and navigation */
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+
+        padding: 20px 5%;
+    }
+
+    /* Allow navigation to fit smaller screens */
+    .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    /* Put the text above the image on mobile */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+
+        padding: 55px 6%;
+        gap: 50px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-content h1 {
+        letter-spacing: -1px;
+    }
+
+    /* Center the introduction paragraph */
+    .description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Center the buttons */
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    /* Display the image below the introduction */
+    .hero-image {
+        flex: 0 1 auto;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .image-frame {
+        max-width: 300px;
+    }
+
+    .footer {
+        font-size: 11px;
+    }
+}
+
+
+/* =========================================
+   9. SMALL MOBILE SCREENS
+   ========================================= */
+
+@media (max-width: 380px) {
+
+    /* Reduce spacing for narrow phones */
+    .nav-links {
+        gap: 12px;
+    }
+
+    .hero-content h1 {
+        font-size: 34px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
